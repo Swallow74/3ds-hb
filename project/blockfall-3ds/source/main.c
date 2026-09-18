@@ -1,5 +1,5 @@
 /*
- * Tetris 3DS — homebrew .3dsx con grafica citro2d (GPU 2D)
+ * Blockfall 3DS — homebrew .3dsx con grafica citro2d (GPU 2D)
  *
  * Top screen    : pozzo 10x20 a blocchi colorati + pannello punteggio + next
  * Bottom screen : aiuto comandi
@@ -378,7 +378,7 @@ int main(int argc, char **argv)
 
 		/* pannello laterale */
 		char line[64];
-		draw_text(txtBuf, font, "TETRIS 3DS", PANEL_X, 14, 0.7f, colAccent);
+		draw_text(txtBuf, font, "BLOCKFALL 3DS", PANEL_X, 14, 0.7f, colAccent);
 		snprintf(line, sizeof(line), "SCORE %d", score);
 		draw_text(txtBuf, font, line, PANEL_X, 44, 0.55f, colWhite);
 		snprintf(line, sizeof(line), "LINES %d   LV %d", lines, level);
@@ -398,20 +398,20 @@ int main(int argc, char **argv)
 				W * CELL + 4, 56, C2D_Color32(0x00, 0x00, 0x00, 0xC0));
 			draw_text(txtBuf, font, "GAME OVER", WELL_X + 8,
 				WELL_Y + 66, 0.6f, colWhite);
-			draw_text(txtBuf, font, "A: rigioca", WELL_X + 8,
+			draw_text(txtBuf, font, "A: retry", WELL_X + 8,
 				WELL_Y + 88, 0.5f, colAccent);
 		}
 
 		/* ----- bottom screen: aiuto ----- */
 		C2D_TargetClear(bot, colBg);
 		C2D_SceneBegin(bot);
-		draw_text(txtBuf, font, "TETRIS 3DS — comandi", 16, 14, 0.6f, colAccent);
-		draw_text(txtBuf, font, "D-Pad Sx/Dx .... muovi il pezzo", 16, 44, 0.5f, colWhite);
-		draw_text(txtBuf, font, "D-Pad Giu ....... discesa veloce", 16, 64, 0.5f, colWhite);
-		draw_text(txtBuf, font, "A / Su .......... ruota", 16, 84, 0.5f, colWhite);
-		draw_text(txtBuf, font, "B ............... caduta istantanea", 16, 104, 0.5f, colWhite);
-		draw_text(txtBuf, font, "START ........... esci a hbmenu", 16, 124, 0.5f, colWhite);
-		snprintf(line, sizeof(line), "Livello %d — ogni 10 linee la caduta accelera",
+		draw_text(txtBuf, font, "BLOCKFALL 3DS - controls", 16, 14, 0.6f, colAccent);
+		draw_text(txtBuf, font, "D-Pad Left/Right .. move piece", 16, 44, 0.5f, colWhite);
+		draw_text(txtBuf, font, "D-Pad Down ........ soft drop", 16, 64, 0.5f, colWhite);
+		draw_text(txtBuf, font, "A / Up ............ rotate", 16, 84, 0.5f, colWhite);
+		draw_text(txtBuf, font, "B ................. hard drop", 16, 104, 0.5f, colWhite);
+		draw_text(txtBuf, font, "START ............. exit to hbmenu", 16, 124, 0.5f, colWhite);
+		snprintf(line, sizeof(line), "Level %d - every 10 lines the fall speeds up",
 			level);
 		draw_text(txtBuf, font, line, 16, 160, 0.5f, colDim);
 
